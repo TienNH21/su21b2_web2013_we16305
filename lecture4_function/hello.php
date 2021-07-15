@@ -1,12 +1,5 @@
 <?php
 
-$name = "TienNH21";
+require './utils.php'; // chèn code từ file utils.php
 
-function sayHello() {
-    // use
-    GLOBAL $name;
-
-    echo "Hello " . $name;
-};
-
-sayHello();
+sayHello("WE16305");
