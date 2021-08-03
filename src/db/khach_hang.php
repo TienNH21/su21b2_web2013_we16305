@@ -56,15 +56,41 @@ function insert(array $data) {
 }
 
 function findById(int $id) {
+    $conn = getConnection();
     $sql = "SELECT * FROM khach_hang WHERE id = :id";
+    $statement = $conn->prepare($sql);
+
+    $statement->execute([ 'id' => $id ]);
+    $rowData = $statement->fetch();
+    $data = [
+        'id' => $rowData['id'],
+        'ma' => $rowData['ma'],
+        'ten' => $rowData['ten'],
+        'email' => $rowData['email'],
+        'sdt' => $rowData['sdt'],
+        'dia_chi' => $rowData['dia_chi'],
+        'gioi_tinh' => $rowData['gioi_tinh'],
+    ];
+
+    return $data;
 }
 
 function update(array $data) {
     $sql = "UPDATE khach_hang SET ma = :ma, ten = :ten, " .
         " email = :email, sdt = :sdt, dia_chi = :dia_chi, gioi_tinh = :gioi_tinh " .
         " WHERE id = :id";
+
+    $conn = getConnection();
+    $statement = $conn->prepare($sql);
+    $statement->execute($data);
+
+    return true;
 }
 
 function deleteById(int $id) {
     $sql = "DELETE FROM khach_hang WHERE id = :id";
+
+    $conn = getConnection();
+    $statement = $conn->prepare($sql);
+    $statement->execute([ 'id' => $id ]);
 }

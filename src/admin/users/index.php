@@ -66,12 +66,19 @@ $kq = getAll();
                                 <?php echo $kq[$i]['dia_chi'] ?>
                             </td>
                             <td>
+                                <!--
+                                    ?id=1
+                                    query string -> truyền tham số lên url
+                                -->
                                 <a
-                                    href="/we16305/src/admin/users/edit.html?id=<?php echo $kq[$i]['id'] ?>"
+                                    href="/we16305/src/admin/users/edit.php?id=<?php echo $kq[$i]['id'] ?>"
                                     class="btn btn-primary">Update</a>
                             </td>
                             <td>
-                                <a class="btn btn-danger">Delete</a>
+                                <a
+                                    href="/we16305/src/admin/users/delete.php?id=<?php echo $kq[$i]['id'] ?>"
+                                    class="btn btn-danger"
+                                >Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
