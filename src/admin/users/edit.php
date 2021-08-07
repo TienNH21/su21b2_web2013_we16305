@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once './../../db/khach_hang.php';
 
 $id = intval( $_GET['id'] );
@@ -16,6 +19,12 @@ $data = findById($id);
     <link rel="stylesheet" href="/we16305/bootstrap.min.css" />
 </head>
 <body>
+    <?php
+    if ( isset($_SESSION['error']) ) {
+        echo $_SESSION['error'];
+        unset( $_SESSION['error'] );
+    }
+    ?>
     <form
         class="col-8 offset-2" method="POST"
         action="/we16305/src/admin/users/update.php">

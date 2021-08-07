@@ -22,7 +22,7 @@ $kq = getAll();
         <div class="row">
             <div class="col-6">
                 <a class="btn btn-success"
-                    href="/we16305/src/admin/users/create.html">Create</a>
+                    href="/we16305/src/admin/users/form_create.php">Create</a>
             </div>
             <div class="col-6"></div>
         </div>
