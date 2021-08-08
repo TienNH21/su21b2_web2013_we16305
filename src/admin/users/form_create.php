@@ -18,7 +18,11 @@
         }
         ?>
         <!-- Hiển thị giao diện cho người dùng nhập -->
-        <form method="POST" action="/we16305/src/admin/users/create.php">
+        <form
+            method="POST"
+            action="/we16305/src/admin/users/create.php"
+            enctype="multipart/form-data"
+        >
             <div class="mt-3">
                 <label>Mã</label>
                 <input class="form-control" type="text" name="ma" />
@@ -38,6 +42,14 @@
             <div class="mt-3">
                 <label>Địa chỉ</label>
                 <input class="form-control" type="text" name="dia_chi" />
+            </div>
+            <div class="mt-3">
+                <label>Avatar</label>
+                <input
+                    class="form-control"
+                    type="file"
+                    name="avatar"
+                />
             </div>
             <div class="mt-3">
                 <label>Giới tính</label>
